@@ -1,0 +1,59 @@
+#Docker command#
+
+1 docker images  ---> list all images
+
+2 docker pull <image name>  ---> pull image ( pull latest version )
+  ex:-docker pull nginx 
+
+3 docker pull <image name>:1.26-bookworn  ---> pull any version that we give
+
+4 docker ps   ---> show all running container
+
+5 docker ps -a  ---> show all container (running and stoped)
+
+6 docker run <image name> ---> run image to make container (run in foreground)
+  
+  docker run <image name>:latest  ---> run latest image
+
+7 docker run -d <image name> ---> run container in backround (-d = deatttach)
+
+8 docker container stop <container ID> ---> stop the container
+
+9 docker container rm <container ID>   ---> remove stop container 
+
+  docker container rm <container ID> <container ID>  ---> remove multiple container
+
+10 docker image rm <image ID> ---> remove images
+
+11 docker container start <container ID> ---> start the stop container
+
+12 docker container kill <container ID> ---> kill the container
+
+13 docker run -d <image name> --name my-nginx ---> change container name 
+   ex: docker run -d <image name>:latest --name my-nginx (take latest version)
+                                    
+14 docker run -it <image name> /bin/bash or bash ---> run container as well go inside the container
+   ( -it = interactive mode)
+
+ IN CONTAINER
+ exit - stop container
+
+ press --ctrl p + q (don't want to stop container and exit the container )
+
+15 docker exec -it <container ID>  bash ---> go inside in exiting container
+
+16 docker run -it <image name> cat /etc/os-release  
+
+ ( run container as well as run command inside container without going inside the container )
+
+ ex: docker run -it <image name> hostname
+   
+     docker run -it <image name> touch file{1..2}.txt  
+  
+  exec ( executable )
+
+17  docker exec it <container ID> cat /etc/os-release 
+
+   ( run command inside container without going inside the container )
+
+18 docker logs <container ID> ---> see the  container logs
