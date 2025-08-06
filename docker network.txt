@@ -1,0 +1,44 @@
+docker network 
+
+    8  docker network create -d bridge shubhamK  -------> create network
+    9  docker network create -d ipvlan shubhamK   port not provide
+   10  docker network create -d ipvlan utkarshg
+   11  docker network ls
+   
+   
+   14  docker pull nginx
+   15  docker images
+ 
+   27  docker run -d -P --name light --netwok utkarshg nginx
+   
+   
+   38  docker run -d -p 80:80 --name acremote --network utkarshg nginx:latest
+   39  docker ps
+   
+   45  docker network ls
+   46  docker network rm shubhamK
+   47  docker ps
+   48  docker kill e58e
+   49  docker kill e079
+   50  docker rm  e079
+   51  docker rm e58e
+   52  docker network rm shubhamK
+   53  docker network rm utkarshg
+   54  clear
+   55  docker network ls
+   56  docker network create -d ipvlan papiya
+   57  docker network ls
+   58  docker run -d -p 80:80 --name red --network papiya nginx
+   59  docker ps
+   60  docker inspect 3e42
+   61  clear
+   62  docker network create -d bridge sakshitaU
+   63  docker network ls
+   64  docker pull httpd
+   65  docker images
+   66  docker run -d -p 80:80 --name yellow --network sakshitaU httpd
+   67  docker ps
+   68  docker inspect e77e
+   69  docker ps
+   70  docker network disconnect sakshitaU yellow
+   71  docker inspect e77e
